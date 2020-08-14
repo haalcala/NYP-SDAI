@@ -19,9 +19,17 @@ class DSUtil:
         
 
     def blow_my_mind(self):
+        df = self.df
+        
+        for col in df.columns:
+            print(f"unique {df[{col}].nunique()}") 
+        
         # print column unique values and counts
+        
+        
+        
         for col in self.df.columns:
-            print(self.df[col].value_counts())
+            print("value count:", self.df[col].value_counts())
             print("-------------")
             
         # TODO: detect missing values and warn
