@@ -12,7 +12,7 @@ Created on Mon Aug 10 19:47:23 2020
 import ds_util as util
 
 ds_util = util.DSUtil()
-ds_util.load_csv("bs140513_032310.csv")
+ds_util.load_csv("files/bs140513_032310.csv")
 
 ds_util.blow_my_mind()
 
@@ -20,7 +20,7 @@ ds_util.blow_my_mind()
 
 ds_util.drop_columns(["customer", "zipMerchant", "zipcodeOri"])
 
-df = ds_util.get_dummies(ds_util.df)
+df = ds_util.get_dummies()
 
 
 ###################################################################
