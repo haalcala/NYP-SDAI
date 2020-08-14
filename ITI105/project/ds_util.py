@@ -26,7 +26,7 @@ class DSUtil:
         
         # print column unique values and counts
         
-        
+        df.isnull().values.any()
         
         for col in self.df.columns:
             print("value count:", self.df[col].value_counts())
