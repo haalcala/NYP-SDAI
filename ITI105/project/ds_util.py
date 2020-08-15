@@ -26,7 +26,7 @@ class DSUtil:
         
         # print column unique values and counts
         
-        df.isnull().values.any()
+        print(f"Has any missing (Nan) data {df.isnull().values.any()}")
         
         for col in self.df.columns:
             print("value count:", self.df[col].value_counts())
@@ -34,7 +34,7 @@ class DSUtil:
             
         # TODO: detect missing values and warn
             
-    def drop_columns(self, columns):
+    def drop_columns(self, columns):    
         df = self.df
         
         for col in columns:
