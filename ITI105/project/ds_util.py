@@ -26,11 +26,17 @@ class DSUtil:
         
         # print column unique values and counts
         
-        print(f"Has any missing (Nan) data {df.isnull().values.any()}")
+        print(f"---------------------------------------------------------------- Has any missing (Nan) data? {df.isnull().values.any()}")
         
-        for col in self.df.columns:
-            print("value count:", self.df[col].value_counts())
-            print("-------------")
+        if df.isnull().values.any():
+            for col in df.columns:
+                print(f"---------------------------------------------------------------- Column {col} has missing data? {df[col].isnull().values.any()}")
+                
+        print("----------------------------------------------------------------")
+        
+        for col in df.columns:
+            print("value count:", df[col].value_counts())
+            print("----------------------------------------------------")
             
         # TODO: detect missing values and warn
             
