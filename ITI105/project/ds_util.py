@@ -45,7 +45,7 @@ class DSUtil:
         
         for col in columns:
             try:
-                df = pd.get_dummies(df.drop(col, axis=1))
+                df = df.drop(col, axis=1)
             except:
                 pass
             
