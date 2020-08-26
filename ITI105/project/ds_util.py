@@ -57,6 +57,7 @@ class DSUtil:
         activity_fn()
         elapsed = datetime.now() - start
         print(activity_name,"... done.", elapsed.total_seconds(),"seconds")
+        return elapsed
         
     def get_dummies(self):
         return pd.get_dummies(self.df)
