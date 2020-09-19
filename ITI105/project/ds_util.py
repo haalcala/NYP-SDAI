@@ -7,6 +7,8 @@ Created on Mon Aug 10 19:59:36 2020
 
 import pandas as pd
 from datetime import datetime
+import requests
+import io
 
 class DSUtil:
     def load_csv(self, csv, **args):
@@ -62,8 +64,16 @@ class DSUtil:
     def get_dummies(self):
         return pd.get_dummies(self.df)
 
+    def get_remote_file(self, url, local_filename):
+        req = requests.get(url)
 
+        print(local_filename, len(req.content))
 
+        f = open(local_filename,"wb")
+
+        f.write(req.content)
+
+        
 if __name__ == "__main__":
     pass
 
