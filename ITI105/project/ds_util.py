@@ -19,6 +19,15 @@ class DSUtil:
         
         print(df.info())
         
+        
+    def load_json(self, file_path, **args):
+        print("args:", args)
+
+        df = pd.read_json(file_path, **args)
+        self.df = df
+        
+        print(df.info())
+        
 
     def blow_my_mind(self):
         df = self.df
@@ -41,7 +50,8 @@ class DSUtil:
             print("----------------------------------------------------")
             
         # TODO: detect missing values and warn
-            
+        
+        
     def drop_columns(self, columns):    
         df = self.df
         
@@ -53,6 +63,7 @@ class DSUtil:
             
         self.df = df
         
+        
     def activity_wrapper(self, activity_name, activity_fn):
         print(activity_name,"...")
         start = datetime.now()
@@ -61,9 +72,11 @@ class DSUtil:
         print(activity_name,"... done.", elapsed.total_seconds(),"seconds")
         return elapsed
         
+        
     def get_dummies(self):
         return pd.get_dummies(self.df)
 
+    
     def get_remote_file(self, url, local_filename):
         req = requests.get(url)
 
