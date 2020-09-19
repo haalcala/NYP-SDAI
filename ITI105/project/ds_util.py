@@ -19,6 +19,8 @@ class DSUtil:
         
         print(df.info())
         
+        return df
+        
         
     def load_json(self, file_path, **args):
         print("args:", args)
@@ -27,6 +29,8 @@ class DSUtil:
         self.df = df
         
         print(df.info())
+        
+        return df
         
 
     def blow_my_mind(self):
