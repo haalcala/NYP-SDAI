@@ -72,6 +72,8 @@ class DSUtil:
         f = open(local_filename,"wb")
 
         f.write(req.content)
+        
+        f.close()
 
         
 if __name__ == "__main__":
